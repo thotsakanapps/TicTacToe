@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- App related -->
+    <string name="app_name">TicTacToe</string>
+
+    <!-- Results Dialog -->
+    <string name="dialog_results_title">Result of this game</string>
+    <string name="dialog_negative_cancel">Cancel</string>
+    <string name="dialog_positive_newGame">New Game</string>
+
+    <!-- Action bar -->
+    <string name="action_new_game">New Game</string>
+    <string name="action_settings">Settings</string>
+
+    <!-- Preferences: Player mode -->
+    <string name="single_player_switch_key">Single Player Mode</string>
+    <string name="single_player_switch_summaryOff">Playing with your friend</string>
+    <string name="single_player_switch_summaryOn">Playing with Android</string>
+    <string name="single_player_switch_title">Single Player Mode</string>
+
+    <!-- Preferences: Single player -->
+    <string name="single_player_defaultValue">You</string>
+    <string name="single_player_dialogMessage">Enter your name</string>
+    <string name="single_player_dialogTitle">Player Name</string>
+    <string name="single_player_summary">Name of the player</string>
+    <string name="single_player_title">Player Name</string>
+
+    <!-- Preferences: First player -->
+    <string name="first_player_defaultValue">Player-1</string>
+    <string name="first_player_dialogMessage">Enter the name of the first player</string>
+    <string name="first_player_dialogTitle">First Player Name</string>
+    <string name="first_player_key">First Player Name</string>
+    <string name="first_player_summary">Name of the first player</string>
+    <string name="first_player_title">First Player Name</string>
+
+    <!-- Preferences: Second player -->
+    <string name="second_player_defaultValue">Player-2</string>
+    <string name="second_player_dialogMessage">Enter the name of the second player</string>
+    <string name="second_player_dialogTitle">Second Player Name</string>
+    <string name="second_player_key">Second Player Name</string>
+    <string name="second_player_summary">Name of the second player</string>
+    <string name="second_player_title">Second Player Name</string>
+
+    <!-- Preferences: Player expertise -->
+    <string name="player_expertise_novice">Novice</string>
+    <string name="player_expertise_advanced">Advanced</string>
+    <string name="player_expertise_expert">Expert</string>
+    <string name="player_expertise_key">Player Expertise</string>
+    <string name="player_expertise_summary">Click to choose level of expertise</string>
+    <string name="player_expertise_title">Player Expertise</string>
+
+    <string-array name="player_expertise_entries">
+        <item>@string/player_expertise_novice</item>
+        <item>@string/player_expertise_advanced</item>
+        <item>@string/player_expertise_expert</item>
+    </string-array>
+
+    <!-- AdMob -->
+    <string name="banner_ad_unit_id"></string>
+
+</resources>

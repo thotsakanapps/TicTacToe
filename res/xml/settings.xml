@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orderingFromXml="true" >
+
+    <!-- Game related preferences -->
+    <PreferenceCategory
+        android:orderingFromXml="true"
+        android:title="Game Preferences" >
+
+        <!-- Player mode -->
+        <SwitchPreference
+            android:defaultValue="@bool/single_player_switch_defaultValue"
+            android:key="@string/single_player_switch_key"
+            android:summaryOff="@string/single_player_switch_summaryOff"
+            android:summaryOn="@string/single_player_switch_summaryOn"
+            android:title="@string/single_player_switch_title" />
+
+        <!-- First player -->
+        <EditTextPreference
+            android:defaultValue="@string/single_player_defaultValue"
+            android:dialogMessage="@string/single_player_dialogMessage"
+            android:dialogTitle="@string/single_player_dialogTitle"
+            android:key="@string/first_player_key"
+            android:summary="@string/single_player_summary"
+            android:title="@string/single_player_title" >
+        </EditTextPreference>
+
+        <!-- Second player -->
+        <EditTextPreference
+            android:defaultValue="@string/second_player_defaultValue"
+            android:dialogMessage="@string/second_player_dialogMessage"
+            android:dialogTitle="@string/second_player_dialogTitle"
+            android:enabled="@bool/second_player_enabled"
+            android:key="@string/second_player_key"
+            android:summary="@string/second_player_summary"
+            android:title="@string/second_player_title" />
+
+        <!-- Player expertise -->
+        <ListPreference
+            android:defaultValue="@string/player_expertise_novice"
+            android:dependency="@string/single_player_switch_key"
+            android:entries="@array/player_expertise_entries"
+            android:entryValues="@array/player_expertise_entries"
+            android:key="@string/player_expertise_key"
+            android:summary="@string/player_expertise_summary"
+            android:title="@string/player_expertise_title" />
+    </PreferenceCategory>
+</PreferenceScreen>

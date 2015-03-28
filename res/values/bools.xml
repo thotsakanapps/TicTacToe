@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Preferences: Player mode -->
+    <bool name="single_player_switch_defaultValue">true</bool>
+
+    <!-- Preferences: Second player -->
+    <bool name="second_player_enabled">false</bool>
+
+</resources>

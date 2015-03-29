@@ -56,6 +56,17 @@
         <item>@string/player_expertise_expert</item>
     </string-array>
 
+    <!-- Market: Rate this app -->
+    <string name="market_rate_app_key">Rate the App</string>
+    <string name="market_rate_app_title">Rate this App</string>
+    <string name="market_rate_app_summary">Click here to rate this app</string>
+
+    <!-- Market: Other Apps -->
+    <string name="market_other_apps_by_us_key">Our App Portfolio</string>
+    <string name="market_other_apps_by_us_title">Our App Portfolio</string>
+    <string name="market_other_apps_by_us_summary">Click here to view other apps published by us</string>
+    <string name="market_other_apps_by_us_publisher">Thotsakan Apps</string>
+
     <!-- AdMob -->
     <string name="banner_ad_unit_id"></string>
 

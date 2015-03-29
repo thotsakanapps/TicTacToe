@@ -3,13 +3,17 @@ package com.thotsakan.tictactoe;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
+import android.net.Uri;
 import android.os.Bundle;
 import android.preference.EditTextPreference;
+import android.preference.Preference;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
+import android.preference.PreferenceScreen;
 import android.support.v4.app.NavUtils;
 
 public final class SettingsActivity extends PreferenceActivity {
@@ -28,6 +32,22 @@ public final class SettingsActivity extends PreferenceActivity {
 		public void onPause() {
 			super.onPause();
 			getPreferenceScreen().getSharedPreferences().unregisterOnSharedPreferenceChangeListener(this);
+		}
+
+		@Override
+		public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
+			String key = preference.getKey();
+
+			if (key.equals(getString(R.string.market_rate_app_key))) {
+				Intent intent = new Intent(Intent.ACTION_VIEW);
+				intent.setData(Uri.parse("http://play.google.com/store/apps/details?id=" + MainActivity.class.getPackage().getName()));
+				startActivity(intent);
+			} else if (key.equals(getString(R.string.market_other_apps_by_us_key))) {
+				Intent intent = new Intent(Intent.ACTION_VIEW);
+				intent.setData(Uri.parse("https://play.google.com/store/search?q=pub:" + getString(R.string.market_other_apps_by_us_publisher)));
+				startActivity(intent);
+			}
+			return super.onPreferenceTreeClick(preferenceScreen, preference);
 		}
 
 		@Override

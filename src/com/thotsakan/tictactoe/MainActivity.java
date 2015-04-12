@@ -11,7 +11,7 @@ import android.widget.LinearLayout;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
-import com.thotsakan.tictactoe.ai.AIPlayerFactory.Expertise;
+import com.thotsakan.tictactoe.ai.Expertise;
 import com.thotsakan.tictactoe.gameview.GameView;
 import com.thotsakan.tictactoe.gameview.GameViewFactory;
 
@@ -24,7 +24,7 @@ public final class MainActivity extends Activity {
 		return preferences.getString(getString(R.string.first_player_key), getString(R.string.single_player_defaultValue));
 	}
 
-	private Expertise getPlayerExpertise() {
+	private int getPlayerExpertise() {
 		SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
 		String expertise = preferences.getString(getString(R.string.player_expertise_key), null);
 		if (getString(R.string.player_expertise_novice).equals(expertise)) {
@@ -34,7 +34,7 @@ public final class MainActivity extends Activity {
 		} else if (getString(R.string.player_expertise_expert).equals(expertise)) {
 			return Expertise.EXPERT;
 		} else {
-			return Expertise.NOVICE;
+			return Expertise.ADVANCED;
 		}
 	}
 

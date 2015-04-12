@@ -2,9 +2,6 @@ package com.thotsakan.tictactoe.gameview;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Paint.Style;
 import android.view.MotionEvent;
 
 import com.thotsakan.tictactoe.board.Board;
@@ -16,25 +13,16 @@ final class TwoPlayerGameView extends GameView {
 		DRAW, FIRST_PLAYER_WON, GAME_OVER, ON_GOING, SECOND_PLAYER_WON;
 	}
 
-	private Board board;
-
 	private GameState currentState;
 
 	private String firstPlayerName;
 
 	private boolean manualPlayer;
 
-	private Paint paint;
-
 	private String secondPlayerName;
 
 	public TwoPlayerGameView(Context context) {
 		super(context);
-		paint = new Paint();
-		paint.setARGB(255, 0, 0, 0);
-		paint.setAntiAlias(true);
-		paint.setStyle(Style.STROKE);
-		paint.setStrokeWidth(5);
 		board = new Board();
 		newGame();
 	}
@@ -91,19 +79,6 @@ final class TwoPlayerGameView extends GameView {
 		currentState = GameState.ON_GOING;
 		manualPlayer = true;
 		invalidate();
-	}
-
-	@Override
-	protected void onDraw(Canvas canvas) {
-		int boardSize = Math.min(getWidth(), getHeight());
-		int tileSize = boardSize / 3;
-		board.draw(canvas, getResources(), tileSize, tileSize);
-		for (int i = 0; i <= 3; i++) {
-			int tileEnd = i * tileSize;
-			canvas.drawLine(tileEnd, 0, tileEnd, boardSize, paint); // vertical
-			canvas.drawLine(0, tileEnd, boardSize, tileEnd, paint); // horizontal
-		}
-		super.onDraw(canvas);
 	}
 
 	@SuppressLint("ClickableViewAccessibility")

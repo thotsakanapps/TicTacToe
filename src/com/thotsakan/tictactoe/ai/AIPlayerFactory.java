@@ -4,17 +4,13 @@ import com.thotsakan.tictactoe.board.Board;
 
 public final class AIPlayerFactory {
 
-	public enum Expertise {
-		ADVANCED, EXPERT, NOVICE;
-	}
-
-	public static AIPlayer getAIPlayer(Expertise expertise, Board board) {
+	public static AIPlayer getAIPlayer(int expertise, Board board) {
 		switch (expertise) {
-		case EXPERT:
+		case Expertise.EXPERT:
 			return new ExpertAIPlayer(board);
-		case ADVANCED:
+		case Expertise.ADVANCED:
 			return new AdvancedAIPlayer(board);
-		case NOVICE:
+		case Expertise.NOVICE:
 		default:
 			return new NoviceAIPlayer(board);
 		}

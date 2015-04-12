@@ -7,4 +7,6 @@
     <!-- Preferences: Second player -->
     <bool name="second_player_enabled">false</bool>
 
-</resources>
+    <!-- Preferences: Results dialog -->
+    <bool name="dialog_results_switch_defaultValue">true</bool>
+    </resources>

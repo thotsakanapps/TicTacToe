@@ -21,7 +21,7 @@ public final class Board {
 		}
 	}
 
-	public void draw(Canvas canvas, Resources resources, int width, int height) {
+	public void draw(Canvas canvas, Resources resources, float width, float height) {
 		for (int row = 0; row < 3; row++) {
 			for (int col = 0; col < 3; col++) {
 				tiles[row][col].draw(canvas, resources, width, height);
@@ -44,12 +44,12 @@ public final class Board {
 		return moves;
 	}
 
-	public TileType getTileType(int row, int col) {
+	public int getTileType(int row, int col) {
 		return tiles[row][col].getTileType();
 	}
 
 	public boolean hasWon() {
-		for (TileType tileType : new TileType[] { TileType.NAUGHT, TileType.CROSS }) {
+		for (int tileType : new int[] { TileType.NAUGHT, TileType.CROSS }) {
 			int config = 0;
 			for (int row = 0; row < 3; row++) {
 				for (int col = 0; col < 3; col++) {
@@ -75,7 +75,7 @@ public final class Board {
 		}
 	}
 
-	public void setTileType(int row, int col, TileType tileType) {
+	public void setTileType(int row, int col, int tileType) {
 		tiles[row][col].setTileType(tileType);
 	}
 }

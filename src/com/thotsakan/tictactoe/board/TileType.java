@@ -2,20 +2,13 @@ package com.thotsakan.tictactoe.board;
 
 import com.thotsakan.tictactoe.R;
 
-public enum TileType {
-	BLANK(R.drawable.blank),
+public final class TileType {
 
-	CROSS(R.drawable.cross),
+	public static final int BLANK = 0;
 
-	NAUGHT(R.drawable.naught);
+	public static final int CROSS = 1;
 
-	private int drawableRep;
+	public static final int NAUGHT = 2;
 
-	private TileType(int drawableRep) {
-		this.drawableRep = drawableRep;
-	}
-
-	int getDrawableRep() {
-		return drawableRep;
-	}
+	public static final int[] RESOURCE_ID_ARRAY = new int[] { R.drawable.ic_blank, R.drawable.ic_cross, R.drawable.ic_naught };
 }

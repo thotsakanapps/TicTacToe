@@ -2,14 +2,10 @@ package com.thotsakan.tictactoe.gameview;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Paint.Style;
 import android.view.MotionEvent;
 
 import com.thotsakan.tictactoe.ai.AIPlayer;
 import com.thotsakan.tictactoe.ai.AIPlayerFactory;
-import com.thotsakan.tictactoe.ai.AIPlayerFactory.Expertise;
 import com.thotsakan.tictactoe.board.Board;
 import com.thotsakan.tictactoe.board.TileType;
 
@@ -19,25 +15,16 @@ final class SinglePlayerGameView extends GameView {
 		COMPUTER_WON, DRAW, GAME_OVER, MANUAL_WON, ON_GOING;
 	}
 
-	private Board board;
-
 	private AIPlayer computerPlay;
 
 	private GameState currentState;
 
 	private boolean manualPlayer;
 
-	private Paint paint;
-
 	private String playerName;
 
-	public SinglePlayerGameView(Context context, Expertise expertise) {
+	public SinglePlayerGameView(Context context, int expertise) {
 		super(context);
-		paint = new Paint();
-		paint.setARGB(255, 0, 0, 0);
-		paint.setAntiAlias(true);
-		paint.setStyle(Style.STROKE);
-		paint.setStrokeWidth(5);
 		board = new Board();
 		computerPlay = AIPlayerFactory.getAIPlayer(expertise, board);
 		newGame();
@@ -103,19 +90,6 @@ final class SinglePlayerGameView extends GameView {
 			computerMove();
 		}
 		invalidate();
-	}
-
-	@Override
-	protected void onDraw(Canvas canvas) {
-		int boardSize = Math.min(getWidth(), getHeight());
-		int tileSize = boardSize / 3;
-		board.draw(canvas, getResources(), tileSize, tileSize);
-		for (int i = 0; i <= 3; i++) {
-			int tileEnd = i * tileSize;
-			canvas.drawLine(tileEnd, 0, tileEnd, boardSize, paint); // vertical
-			canvas.drawLine(0, tileEnd, boardSize, tileEnd, paint); // horizontal
-		}
-		super.onDraw(canvas);
 	}
 
 	@SuppressLint("ClickableViewAccessibility")

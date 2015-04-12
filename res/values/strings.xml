@@ -6,8 +6,12 @@
 
     <!-- Results Dialog -->
     <string name="dialog_results_title">Result of this game</string>
-    <string name="dialog_negative_cancel">Cancel</string>
-    <string name="dialog_positive_newGame">New Game</string>
+    <string name="dialog_results_cancel">Disable popup</string>
+    <string name="dialog_results_newGame">New Game</string>
+    <string name="dialog_results_switch_summaryOff">Results popup disabled</string>
+    <string name="dialog_results_switch_summaryOn">Results popup enabled</string>
+    <string name="dialog_results_switch_title">Results popup</string>
+    <string name="dialog_results_switch_key">Results popup</string>
 
     <!-- Action bar -->
     <string name="action_new_game">New Game</string>

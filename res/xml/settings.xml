@@ -44,6 +44,14 @@
             android:key="@string/player_expertise_key"
             android:summary="@string/player_expertise_summary"
             android:title="@string/player_expertise_title" />
+
+        <!-- Results dialog -->
+        <SwitchPreference
+            android:defaultValue="@bool/dialog_results_switch_defaultValue"
+            android:key="@string/dialog_results_switch_key"
+            android:summaryOff="@string/dialog_results_switch_summaryOff"
+            android:summaryOn="@string/dialog_results_switch_summaryOn"
+            android:title="@string/dialog_results_switch_title" />
     </PreferenceCategory>
 
     <!-- App related options -->

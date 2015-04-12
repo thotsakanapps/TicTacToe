@@ -1,3 +1,8 @@
 <resources>
 
+    <!-- Padding -->
+    <dimen name="horizontal_padding">10dp</dimen>
+    <dimen name="vertical_padding">10dp</dimen>
+    <dimen name="padding">10dp</dimen>
+
 </resources>
